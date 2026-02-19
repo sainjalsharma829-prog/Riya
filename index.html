@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Proposal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .container {
+            width: 360px;
+            height: 640px;
+            background: linear-gradient(180deg, #fff5f5 0%, #ffe4e8 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(255, 100, 150, 0.3);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+            padding: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .text-box {
+            background: linear-gradient(135deg, #ff6b95 0%, #ff8a80 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(255, 107, 149, 0.4);
+            line-height: 1.4;
+        }
+
+        .image-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .btn-back {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #d63384;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #ff6b95 0%, #ff8a80 100%);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 107, 149, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-number {
+            text-align: center;
+            color: #ff6b95;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .heart {
+            color: #ff6b95;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1 -->
+        <div class="page active" id="page1">
+            <div class="page-number">Page 1 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">Good Afternoon my <span class="heart">♥</span></div>
+            <div class="image-box">
+                <img src="../Choco Pie.jpeg" alt="Choco Pie">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(0)" disabled>Back</button>
+                <button class="btn btn-next" onclick="goToPage(2)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="page" id="page2">
+            <div class="page-number">Page 2 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">You give refreshness in my life like</div>
+            <div class="image-box">
+                <img src="../Ceter Fresh.jpeg" alt="Ceter Fresh">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(1)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(3)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="page" id="page3">
+            <div class="page-number">Page 3 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">When I see you my mind .......</div>
+            <div class="image-box">
+                <img src="../Fuse.jpeg" alt="Fuse">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(2)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(4)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="page" id="page4">
+            <div class="page-number">Page 4 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">You are ..................... to me</div>
+            <div class="image-box">
+                <img src="../Gems.jpeg" alt="Gems">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(3)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(5)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 5 -->
+        <div class="page" id="page5">
+            <div class="page-number">Page 5 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">Our Relationship is like</div>
+            <div class="image-box">
+                <img src="../KitKat.jpeg" alt="KitKat">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(4)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(6)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 6 -->
+        <div class="page" id="page6">
+            <div class="page-number">Page 6 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">You are my Pasandida Aurat</div>
+            <div class="image-box">
+                <img src="../Her 1.jpeg" alt="Her 1">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(5)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(7)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 7 -->
+        <div class="page" id="page7">
+            <div class="page-number">Page 7 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">And my Every ............. Say</div>
+            <div class="image-box">
+                <img src="../Pulse.jpeg" alt="Pulse">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(6)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(8)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 8 -->
+        <div class="page" id="page8">
+            <div class="page-number">Page 8 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">That I Love You So much</div>
+            <div class="image-box">
+                <img src="../Her 2.jpeg" alt="Her 2">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(7)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(9)">Next</button>
+            </div>
+        </div>
+
+        <!-- Page 9 -->
+        <div class="page" id="page9">
+            <div class="page-number">Page 9 of 9 <span class="heart">♥</span></div>
+            <div class="text-box">Give me kiss babe</div>
+            <div class="image-box">
+                <img src="../Kiss.jpeg" alt="Kiss">
+            </div>
+            <div class="buttons">
+                <button class="btn btn-back" onclick="goToPage(8)">Back</button>
+                <button class="btn btn-next" onclick="goToPage(9)" disabled>Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToPage(pageNum) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show the selected page
+            const selectedPage = document.getElementById('page' + pageNum);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            // Update button states
+            updateButtons(pageNum);
+        }
+
+        function updateButtons(pageNum) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach((page, index) => {
+                const backBtn = page.querySelector('.btn-back');
+                const nextBtn = page.querySelector('.btn-next');
+                
+                if (backBtn) {
+                    backBtn.disabled = (index === 0);
+                }
+                if (nextBtn) {
+                    nextBtn.disabled = (index === pages.length - 1);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
